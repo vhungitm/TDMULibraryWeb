@@ -1,0 +1,316 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Quản lý phiếu nhập";
+}
+
+@section Scripts{
+    <script>
+        var config = {
+            user: {
+                username: '@Html.Raw(ViewBag.username)'
+            },
+            id: @(ViewBag.id),
+            staff: {
+                id: '@Html.Raw(ViewBag.staffId)',
+                name: '@Html.Raw(ViewBag.staffName)'
+            },
+            createdDate: '@Html.Raw(ViewBag.createdDate)',
+            page: {
+                index: @(ViewBag.page),
+                size: 5,
+                total: 1
+            }
+        };
+
+        var detailConfig = {
+            importId: @Html.Raw(ViewBag.importId),
+            book: {
+                id: '@Html.Raw(ViewBag.bookId)',
+                title: '@Html.Raw(ViewBag.bookTitle)'
+            },
+            page: {
+                index: @Html.Raw(ViewBag.pageDetail),
+                size: 5,
+                total: 1
+            }
+        }
+    </script>
+    <script src="~/Scripts/Admin/import.js"></script>
+}
+
+<div class="card shadow mb-4">
+
+    <!-- Content header -->
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold">Danh Sách Phiếu Nhập</h6>
+    </div>
+
+    <!-- Content body -->
+    <div class="card-body">
+        <div class="table-responsive">
+
+            <!-- Tools -->
+            <div class="mb-3">
+
+                <button id="btnAdd" class="btn btn-success btn-icon-split me-1">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-plus"></i>
+                    </span>
+                    <span class="text">Thêm mới</span>
+                </button>
+
+                <button id="btnDelete" style="display: none" class="btn btn-danger btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-trash"></i>
+                    </span>
+                    <span class="text">Xoá</span>
+                </button>
+
+            </div>
+
+            <!-- Filter -->
+            <div class="form-inline mb-3" id="filter"></div>
+
+            <!-- Table -->
+            <table class="table table-bordered" id="dataTable" cellspacing="0"></table>
+
+            <!-- Pagination -->
+            <div>
+                <div id="lblPagination"></div>
+                <div id="pagination" class="pagination justify-content-center"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Filter -->
+<script id="filterContent" type="text/html">
+    <div class="row row-cols-lg-auto g-2 mb-3" width="100%">
+        <div class="col-lg-3">
+            <input id="nbrIdSearch" name="nbrIdSearch" type="number" class="form-control" placeholder="Mã phiếu nhập" />
+        </div>
+        <div class="col-lg-3">
+            <select id="slStaffSearch" name="slStaffSearch" class="selectpicker" data-search="true" data-search-placeholder="Tên/Mã nhân viên">
+                <option value="">Tất cả nhân viên</option>
+            </select>
+        </div>
+        <div class="col-lg-3">
+            <input id="txtCreatedDateSearch" name="txtCreatedDateSearch" class="form-control" style="min-width: 220px" placeholder="Ngày tạo" />
+        </div>
+        <div class="col-auto">
+            <button id="btnSearch" class="btn btn-primary btn-icon-split me-1">
+                <span class="icon text-white-50">
+                    <i class="fas fa-search"></i>
+                </span>
+                <span class="text">Tìm kiếm</span>
+            </button>
+            <button id="btnReset" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-sync"></i>
+                </span>
+                <span class="text">Làm mới</span>
+            </button>
+        </div>
+        <div class="col-auto">
+            
+        </div>
+    </div>
+</script>
+
+<!-- Table header-->
+<script id="dataTableHeader" type="x-tmpl-mustache">
+    <thead align="center">
+        <tr align="center">
+            <th width="15">
+                <input id="ckbCheckAll" type="checkbox" class="form-check-input" />
+            </th>
+            <th>Id</th>
+            <th>Nhân viên</th>
+            <th>Ngày tạo</th>
+            <th>Số lượng</th>
+            <th>Tổng tiền</th>
+            <th>Công cụ</th>
+        </tr>
+    </thead>
+</script>
+
+<!-- Data item-->
+<script id="dataItem" type="x-tmpl-mustache">
+    <tr>
+        <td>
+            <input class="ckbItem form-check-input" type="checkbox" value="{{Id}}">
+        </td>
+        <td align="center">{{Id}}</td>
+        <td>
+            Mã NV: {{StaffId}}<br />
+            Họ tên: {{StaffName}}
+        </td>
+        <td align="center">{{CreatedDate}}</td>
+        <td align="center">
+            {{Quantity}}
+        </td>
+        <td>
+            {{TotalPrice}} VNĐ
+        </td>
+        <td align="center">
+            <button class="btnView btn btn-primary btn-circle btn-sm" title="Xem chi tiết" data-id="{{Id}}">
+                <i class="fas fa-eye"></i>
+            </button>
+            <button class="btnDelete btn btn-danger btn-circle btn-sm" title="Xóa" data-id="{{Id}}">
+                <i class="fas fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+</script>
+
+<!-- Modal view -->
+<div id="modalView" class="modal fade"  data-bs-keyboard="false" data-bs-backdrop="static" tabindex="-2">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chi Tiết Phiếu Mượn</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal view content -->
+<script id="modalViewBody" type="text/html">
+    <div class="mb-3">
+        <button id="btnAddDetailItem" class="btn btn-primary btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-plus"></i>
+            </span>
+            <span class="text">Thêm mới</span>
+        </button>
+        <button id="btnDeleteDetailItem" class="btn btn-danger btn-icon-split" style="display: none;">
+            <span class="icon text-white-50">
+                <i class="fas fa-trash"></i>
+            </span>
+            <span class="text">Xóa</span>
+        </button>
+    </div>
+    <div id="detailFilter"></div>
+    <table class="table table-bordered" id="detailTable" cellspacing="0"></table>
+    <div>
+        <div id="lblDetailPagination"></div>
+        <div id="detailPagination" class="pagination justify-content-center"></div>
+    </div>
+</script>
+
+<!-- Detail filter content -->
+<script id="detailFilterContent" type="text/html">
+    <div class="row row-cols-lg-auto g-2 mb-3">
+        <div class="col-lg-3">
+            <select id="slBookSearch" class="selectpicker" data-search="true" data-search-placeholder="Tên/Mã sách">
+                <option value="">Tất cả sách</option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <button id="btnSearchDetailItem" class="btn btn-primary btn-icon-split me-1">
+                <span class="icon text-white-50">
+                    <i class="fas fa-search"></i>
+                </span>
+                <span class="text">Tìm kiếm</span>
+            </button>
+            <button id="btnResetDetail" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-sync"></i>
+                </span>
+                <span class="text">Làm mới</span>
+            </button>
+        </div>
+    </div>
+</script>
+
+<!-- Detail table header -->
+<script id="detailTableHeader" type="text/html">
+    <thead align="center">
+        <tr>
+            <th>
+                <input id="ckbCheckAllDetailItem" type="checkbox" class="form-check-input" />
+            </th>
+            <th>Id</th>
+            <th>Tên sách</th>
+            <th width="150">Số lượng</th>
+            <th width="150">Đơn giá</th>
+            <th width="150">Thành tiền</th>
+            <th width="100">Công cụ</th>
+        </tr>
+    </thead>
+</script>
+
+<script id="detailItem" type="x-tmpl-mustache">
+    <tr align="center">
+        <td>
+            <input type="checkbox" class="ckbDetailItem form-check-input" value="{{BookId}}" />
+        </td>
+        <td>{{BookId}}</td>
+        <td align="left">{{BookTitle}}</td>
+        <td>{{Quantity}}</td>
+        <td>{{Price}} VNĐ</td>
+        <td>{{TotalPrice}} VNĐ</td>
+        <td>
+            <button class="btnUpdateDetailItem btn btn-primary btn-circle btn-sm" title="Cập nhật" data-id="{{BookId}}">
+                <i class="fas fa-edit"></i>
+            </button>
+            <button class="btnDeleteDetailItem btn btn-danger btn-circle btn-sm" title="Xóa" data-id="{{BookId}}">
+                <i class="fas fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+</script>
+
+<!-- Modal update detail -->
+<div id="modalUpdateDetailItem" class="modal fade" tabindex="-2">
+    <div class="modal-dialog fade">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Cập Nhật Chi Tiết Phiếu Nhập</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary btn-icon-split" data-bs-dismiss="modal">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-times"></i>
+                    </span>
+                    <span class="text">Huỷ</span>
+                </button>
+                <button id="btnSaveDetailItem" data-type="0" class="btn btn-primary btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    <span class="text">Hoàn thành</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal update detail body -->
+<script id="modalUpdateDetailItemBody" type="text/html">
+    <form id="frmUpdateDetailItem">
+        <div class="mb-3">
+            <label class="form-label">Sách <span class="text-danger">(*)</span></label>
+            <select id="slBook" name="slBook" data-search="true" data-search-placeholder="Mã/Tên sách" class="selectpicker">
+                <option value="0">Chọn sách</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Số lượng (<span id="lblQuantity">1</span> Quyển) <span class="text-danger">(*)</span></label>
+            <input id="nbrQuantity" name="nbrQuantity" type="number" value="1" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Đơn giá (<span id="lblPrice">0</span> VNĐ) <span class="text-danger">(*)</span></label>
+            <input id="nbrPrice" name="nbrPrice" type="number" value="0" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Thành tiền (<span id="lblTotalPrice">0</span> VNĐ)</label>
+            <input id="nbrTotalPrice" name="nbrTotalPrice" type="number" value="0" class="form-control" disabled />
+        </div>
+    </form>
+</script>

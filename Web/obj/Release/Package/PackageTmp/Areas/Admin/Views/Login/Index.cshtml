@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "TDMU - Đăng nhập hệ thống";
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="vn">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Quản Trị - @ViewBag.Title</title>
+
+    <!-- Icon Title -->
+    <link rel="icon" href="/Images/tdmu-logo.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link href="~/Fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="~/Css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Css/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="~/Scripts/jquery.min.js"></script>
+
+</head>
+<body>
+    <div style="width: 350px; max-width: 100%" class="bg-white mx-auto border rounded my-5">
+        <div class="border-bottom" style="height: 130px">
+            <center class="mt-5 pb-5">
+                <img src="/Images/tdmu-logo.png" width="80" height="80" class="mb-2"><br />
+                <img src="/Images/no-avatar.png" width="80" height="80" class="bg-white rounded-circle" />
+            </center>
+        </div>
+        <form id="frmLogin" class="mx-5 mt-3">
+            <div class="mb-3">
+                <label class="form-label mt-5">Tài khoản</label>
+                <input type="text" class="form-control" id="txtUsername" name="txtUsername" placeholder="Mã nhân viên">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Mật khẩu</label>
+                <input type="password" class="form-control" id="txtPassword" name="txtPassword" placeholder="********">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="ckbRemember">
+                <label class="form-check-label" for="ckbRemember">Nhớ tài khoản</label>
+            </div>
+        </form>
+        <div class="mx-5 mb-4">
+            <div class="d-grid">
+                <button id="btnLogin" class="btn btn-primary mb-3">Đăng nhập</button>
+            </div>
+            <center><a href="/Public/User/Remember">Quên mật khẩu?</a></center>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/bootbox.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.js"></script>
+    <script src="~/Scripts/Admin/user.js"></script>
+</body>
+</html>

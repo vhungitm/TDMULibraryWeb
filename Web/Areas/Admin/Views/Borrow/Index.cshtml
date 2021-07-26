@@ -1,0 +1,251 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Quản lý phiếu mượn";
+}
+@section Scripts{
+    <script>
+        var config = {
+            id: @Html.Raw(ViewBag.id),
+            student: {
+                id: '@Html.Raw(ViewBag.studentId)',
+                name: '@Html.Raw(ViewBag.StudentName)'
+            },
+            staff: {
+                id: '@Html.Raw(ViewBag.staffId)',
+                name: '@Html.Raw(ViewBag.staffName)'
+            },
+            book: {
+                id: '@Html.Raw(ViewBag.bookId)',
+                title: '@Html.Raw(ViewBag.bookTitle)'
+            },
+            borrowDate: '@Html.Raw(ViewBag.borrowDate)',
+            returnDate: '@Html.Raw(ViewBag.returnDate)',
+            status: @Html.Raw(ViewBag.status),
+            page: {
+                index: @(ViewBag.page),
+                size: 5,
+                total: 1
+            }
+        }
+    </script>
+    <script src="~/Scripts/Admin/borrow.js"></script>
+}
+
+<div class="card shadow mb-4">
+
+    <!-- Content header -->
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold">Danh Sách Phiếu Mượn</h6>
+    </div>
+
+    <!-- Content body -->
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <!-- Tools -->
+            <div class="mb-3">
+                <button id="btnAdd" class="btn btn-success btn-icon-split me-1">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-plus"></i>
+                    </span>
+                    <span class="text">Thêm mới</span>
+                </button>
+
+                <button id="btnDelete" style="display: none" class="btn btn-danger btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-trash"></i>
+                    </span>
+                    <span class="text">Xoá</span>
+                </button>
+            </div>
+
+            <!-- Filter -->
+            <div class="form-inline mb-3" id="filter"></div>
+            <!-- Table -->
+            <table class="table table-bordered" id="dataTable" cellspacing="0"></table>
+
+            <!-- Pagination -->
+            <div>
+                <div id="lblPagination"></div>
+                <div id="pagination" class="pagination justify-content-center"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Filter -->
+<script id="filterContent" type="text/html">
+    <div class="row row-cols-lg-auto g-2 mb-3" width="100%">
+        <div class="col-lg-3">
+            <input id="nbrIdSearch" name="nbrIdSearch" type="number" class="form-control" placeholder="Mã phiếu mượn" />
+        </div>
+        <div class="col-lg-3 dropdown">
+            <select id="slStudentSearch" name="slStudentSearch" class="selectpicker" data-search="true" data-search-placeholder="Mã/Tên sinh viên">
+                <option value="">Tất cả sinh viên</option>
+            </select>
+        </div>
+        <div class="col-lg-3 dropdown">
+            <select id="slStaffSearch" name="slStaffSearch" class="selectpicker" data-search="true" data-search-placeholder="Mã/Tên nhân viên">
+                <option value="">Tất cả nhân viên</option>
+            </select>
+        </div>
+        <div class="col-lg-3 dropdown">
+            <select id="slBookSearch" name="slBookSearch" class="selectpicker" data-search="true" data-search-placeholder="Mã/Tên sách">
+                <option value="">Tất cả sách</option>
+            </select>
+        </div>
+        <div class="col-lg-3">
+            <input id="txtBorrowDate" name="txtBorrowDate" class="form-control"  placeholder="Ngày mượn" />
+        </div>
+        <div class="col-lg-3">
+            <input id="txtReturnDate" name="txtReturnDate" class="form-control" placeholder="Ngày trả" />
+        </div>
+        <div class="col-lg-3">
+            <select id="slStatusSearch" name="slStatusSearch" class="selectpicker">
+                <option value="2">Chọn trạng thái mượn</option>
+                <option value="1">Đã trả</option>
+                <option value="0">Chưa Trả</option>
+                <option value="-1">Đăng ký mượn</option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <button id="btnSearch" class="btn btn-primary btn-icon-split me-1">
+                <span class="icon text-white-50">
+                    <i class="fas fa-search"></i>
+                </span>
+                <span class="text">Tìm kiếm</span>
+            </button>
+            <button id="btnReset" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-sync"></i>
+                </span>
+                <span class="text">Làm mới</span>
+            </button>
+        </div>
+    </div>
+</script>
+
+<!-- Table header -->
+<script id="dataTableHeader" type="x-tmpl-mustache">
+    <thead align="center">
+        <tr align="center">
+            <th width="50">
+                <input id="ckbCheckAll" type="checkbox" class="form-check-input" />
+            </th>
+            <th width="50">Id</th>
+            <th width="200">Sinh viên</th>
+            <th width="200">Nhân viên</th>
+            <th width="220">Tên sách</th>
+            <th width="220">Thông tin</th>
+            <th width="200">Trạng thái</th>
+            <th width="100">Công cụ</th>
+        </tr>
+    </thead>
+</script>
+
+<!-- Data item -->
+<script id="dataItem" type="x-tmpl-mustache">
+    <tr>
+        <td align="center">
+            <input class="ckbItem form-check-input" type="checkbox" value="{{Id}}">
+        </td>
+        <td align="center">{{Id}}</td>
+        <td>
+            MSSV: {{StudentId}}<br />
+            Họ tên: {{StudentName}}
+        </td>
+        <td>
+            Mã NV: {{StaffId}}<br />
+            Họ tên: {{StaffName}}
+        </td>
+        <td>
+            Mã sách: {{BookId}}<br/>
+            Tên sách: {{BookTitle}}
+        </td>
+        <td>
+            {{{BorrowDate}}}
+            {{{ReturnDeadline}}}
+            {{{ReturnDate}}}
+        </td>
+        <td>
+            {{{Status}}}
+        </td>
+        <td align="center">
+            <button class="btnUpdate btn btn-primary btn-circle btn-sm" title="Cập nhật" data-id="{{Id}}">
+                <i class="fas fa-edit"></i>
+            </button>
+            <button class="btnDelete btn btn-danger btn-circle btn-sm" title="Xóa" data-id="{{Id}}">
+                <i class="fas fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+</script>
+
+<!-- Modal add/update -->
+<div id="modalUpdate" class="modal fade" tabindex="-2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Cập Nhật Thông Tin Phiếu Mượn</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary btn-icon-split" data-bs-dismiss="modal">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-times"></i>
+                    </span>
+                    <span class="text">Huỷ</span>
+                </button>
+                <button id="btnSave" class="btn btn-primary btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    <span class="text">Hoàn thành</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal add/update content -->
+<script id="modalUpdateBody" type="text/html">
+    <form id="frmUpdate">
+        <input id="nbrId" name="nbrId" value="0" hidden />
+        <div class="mb-3">
+            <label class="form-label">Sinh viên <span class="text-danger">(*)</span></label>
+            <select id="slStudent" name="slStudent" class="selectpicker" data-search="true" data-search-placeholder="Mã/Tên sinh viên">
+                <option value="">Chọn sinh viên</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Nhân viên <span class="text-danger">(*)</span></label>
+            <select id="slStaff" name="slStaff" class="selectpicker" data-search="true" data-search-placeholder="Mã/Tên nhân viên">
+                <option value="">Chọn nhân viên</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Sách <span class="text-danger">(*)</span></label>
+            <select id="slBook" name="slBook" class="selectpicker" data-search="true" data-search-placeholder="Mã/Tên sách">
+                <option value="0">Chọn sách</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Ngày mượn <span class="text-danger">(*)</span></label>
+            <input id="dtBorrowDate" name="dtBorrowDate" type="date" class="form-control" />
+        </div>
+        <div class="mb-3" style="display: none">
+            <label class="form-label">Ngày trả <span class="text-danger">(*)</span></label>
+            <input id="dtReturnDate" name="dtReturnDate" type="date" class="form-control" value="@(DateTime.Now.ToString("yyyy-MM-dd"))"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Trạng thái <span class="text-danger">(*)</span></label>
+            <select id="slStatus" name="slStatus" class="selectpicker">
+                <option value="0">Chưa trả</option>
+                <option value="1">Đã trả</option>
+                <option value="-1">Đăng ký mượn</option>
+            </select>
+        </div>
+    </form>
+</script>

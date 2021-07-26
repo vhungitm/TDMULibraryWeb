@@ -1,0 +1,426 @@
+C:\Users\Hung\source\repos\Web\Web\bin\Web.dll.config
+C:\Users\Hung\source\repos\Web\Web\bin\Web.dll
+C:\Users\Hung\source\repos\Web\Web\bin\Web.pdb
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\csc.exe
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\csc.exe.config
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\csc.rsp
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\csi.exe
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\csi.exe.config
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\csi.rsp
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.AppContext.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Console.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.IO.Compression.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Security.Claims.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.ValueTuple.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\vbc.exe
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\vbc.exe.config
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\vbc.rsp
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\Hung\source\repos\Web\Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Hung\source\repos\Web\Web\bin\Antlr3.Runtime.dll
+C:\Users\Hung\source\repos\Web\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Hung\source\repos\Web\Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Hung\source\repos\Web\Web\bin\Model.dll
+C:\Users\Hung\source\repos\Web\Web\bin\Newtonsoft.Json.dll
+C:\Users\Hung\source\repos\Web\Web\bin\System.Web.Helpers.dll
+C:\Users\Hung\source\repos\Web\Web\bin\System.Web.Mvc.dll
+C:\Users\Hung\source\repos\Web\Web\bin\System.Web.Optimization.dll
+C:\Users\Hung\source\repos\Web\Web\bin\System.Web.Razor.dll
+C:\Users\Hung\source\repos\Web\Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Hung\source\repos\Web\Web\bin\System.Web.WebPages.dll
+C:\Users\Hung\source\repos\Web\Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Hung\source\repos\Web\Web\bin\WebGrease.dll
+C:\Users\Hung\source\repos\Web\Web\bin\EntityFramework.dll
+C:\Users\Hung\source\repos\Web\Web\bin\Model.pdb
+C:\Users\Hung\source\repos\Web\Web\bin\Model.dll.config
+C:\Users\Hung\source\repos\Web\Web\bin\System.Web.Helpers.xml
+C:\Users\Hung\source\repos\Web\Web\bin\System.Web.Mvc.xml
+C:\Users\Hung\source\repos\Web\Web\bin\System.Web.Optimization.xml
+C:\Users\Hung\source\repos\Web\Web\bin\System.Web.Razor.xml
+C:\Users\Hung\source\repos\Web\Web\bin\System.Web.WebPages.xml
+C:\Users\Hung\source\repos\Web\Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Hung\source\repos\Web\Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Hung\source\repos\Web\Web\bin\Newtonsoft.Json.xml
+C:\Users\Hung\source\repos\Web\Web\bin\Antlr3.Runtime.pdb
+C:\Users\Hung\source\repos\Web\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Hung\source\repos\Web\Web\bin\EntityFramework.xml
+C:\Users\Hung\source\repos\Web\Web\obj\Debug\Web.csprojAssemblyReference.cache
+C:\Users\Hung\source\repos\Web\Web\obj\Debug\Web.csproj.CoreCompileInputs.cache
+C:\Users\Hung\source\repos\Web\Web\obj\Debug\Web.csproj.CopyComplete
+C:\Users\Hung\source\repos\Web\Web\obj\Debug\Web.dll
+C:\Users\Hung\source\repos\Web\Web\obj\Debug\Web.pdb
+C:\Users\Hung\source\repos\Web\Web\bin\CKFinder.dll
+C:\Users\Hung\source\repos\Web\Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Hung\source\repos\Web\Web\bin\EntityFramework.SqlServer.xml
+D:\Web\Web\obj\Debug\Web.csprojAssemblyReference.cache
+D:\Web\Web\obj\Debug\Web.csproj.CoreCompileInputs.cache
+D:\Web\Web\obj\Debug\Web.dll
+D:\Web\Web\obj\Debug\Web.pdb
+D:\Web\Web\bin\Web.dll.config
+D:\Web\Web\bin\Web.dll
+D:\Web\Web\bin\Web.pdb
+D:\Web\Web\bin\roslyn\csc.exe
+D:\Web\Web\bin\roslyn\csc.exe.config
+D:\Web\Web\bin\roslyn\csc.rsp
+D:\Web\Web\bin\roslyn\csi.exe
+D:\Web\Web\bin\roslyn\csi.exe.config
+D:\Web\Web\bin\roslyn\csi.rsp
+D:\Web\Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Web\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Web\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Web\Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Web\Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Web\Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Web\Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Web\Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Web\Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Web\Web\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Web\Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Web\Web\bin\roslyn\System.AppContext.dll
+D:\Web\Web\bin\roslyn\System.Collections.Immutable.dll
+D:\Web\Web\bin\roslyn\System.Console.dll
+D:\Web\Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Web\Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Web\Web\bin\roslyn\System.IO.Compression.dll
+D:\Web\Web\bin\roslyn\System.IO.FileSystem.dll
+D:\Web\Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Web\Web\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Web\Web\bin\roslyn\System.IO.Pipes.dll
+D:\Web\Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\Web\Web\bin\roslyn\System.Security.AccessControl.dll
+D:\Web\Web\bin\roslyn\System.Security.Claims.dll
+D:\Web\Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Web\Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Web\Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Web\Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Web\Web\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Web\Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Web\Web\bin\roslyn\System.ValueTuple.dll
+D:\Web\Web\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Web\Web\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Web\Web\bin\roslyn\System.Xml.XPath.dll
+D:\Web\Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Web\Web\bin\roslyn\vbc.exe
+D:\Web\Web\bin\roslyn\vbc.exe.config
+D:\Web\Web\bin\roslyn\vbc.rsp
+D:\Web\Web\bin\roslyn\VBCSCompiler.exe
+D:\Web\Web\bin\roslyn\VBCSCompiler.exe.config
+D:\Web\Web\bin\Antlr3.Runtime.dll
+D:\Web\Web\bin\CKFinder.dll
+D:\Web\Web\bin\EntityFramework.dll
+D:\Web\Web\bin\EntityFramework.SqlServer.dll
+D:\Web\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Web\Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Web\Web\bin\Model.dll
+D:\Web\Web\bin\Newtonsoft.Json.dll
+D:\Web\Web\bin\System.Web.Helpers.dll
+D:\Web\Web\bin\System.Web.Mvc.dll
+D:\Web\Web\bin\System.Web.Optimization.dll
+D:\Web\Web\bin\System.Web.Razor.dll
+D:\Web\Web\bin\System.Web.WebPages.Deployment.dll
+D:\Web\Web\bin\System.Web.WebPages.dll
+D:\Web\Web\bin\System.Web.WebPages.Razor.dll
+D:\Web\Web\bin\WebGrease.dll
+D:\Web\Web\bin\Model.pdb
+D:\Web\Web\bin\Model.dll.config
+D:\Web\Web\bin\EntityFramework.xml
+D:\Web\Web\bin\EntityFramework.SqlServer.xml
+D:\Web\Web\bin\System.Web.Helpers.xml
+D:\Web\Web\bin\System.Web.Mvc.xml
+D:\Web\Web\bin\System.Web.Razor.xml
+D:\Web\Web\bin\System.Web.WebPages.xml
+D:\Web\Web\bin\System.Web.WebPages.Deployment.xml
+D:\Web\Web\bin\System.Web.WebPages.Razor.xml
+D:\Web\Web\bin\System.Web.Optimization.xml
+D:\Web\Web\bin\Newtonsoft.Json.xml
+D:\Web\Web\bin\Antlr3.Runtime.pdb
+D:\Web\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Web\Web\obj\Debug\Web.csproj.CopyComplete
+E:\Project\Thu Vien TDMU\Web\Web\bin\Web.dll.config
+E:\Project\Thu Vien TDMU\Web\Web\bin\Web.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\Web.pdb
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\csc.exe
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\csc.exe.config
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\csc.rsp
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\csi.exe
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\csi.exe.config
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\csi.rsp
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.AppContext.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Collections.Immutable.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Console.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.IO.Compression.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.IO.FileSystem.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.IO.Pipes.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Reflection.Metadata.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Security.AccessControl.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Security.Claims.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Security.Principal.Windows.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.ValueTuple.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Xml.XPath.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\vbc.exe
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\vbc.exe.config
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\vbc.rsp
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\VBCSCompiler.exe
+E:\Project\Thu Vien TDMU\Web\Web\bin\roslyn\VBCSCompiler.exe.config
+E:\Project\Thu Vien TDMU\Web\Web\bin\Antlr3.Runtime.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\CKFinder.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\EntityFramework.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\EntityFramework.SqlServer.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\Microsoft.Web.Infrastructure.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\Model.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\Newtonsoft.Json.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\System.Web.Helpers.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\System.Web.Mvc.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\System.Web.Optimization.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\System.Web.Razor.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\System.Web.WebPages.Deployment.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\System.Web.WebPages.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\System.Web.WebPages.Razor.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\WebGrease.dll
+E:\Project\Thu Vien TDMU\Web\Web\bin\Model.pdb
+E:\Project\Thu Vien TDMU\Web\Web\bin\Model.dll.config
+E:\Project\Thu Vien TDMU\Web\Web\bin\EntityFramework.xml
+E:\Project\Thu Vien TDMU\Web\Web\bin\EntityFramework.SqlServer.xml
+E:\Project\Thu Vien TDMU\Web\Web\bin\System.Web.Helpers.xml
+E:\Project\Thu Vien TDMU\Web\Web\bin\System.Web.Mvc.xml
+E:\Project\Thu Vien TDMU\Web\Web\bin\System.Web.Razor.xml
+E:\Project\Thu Vien TDMU\Web\Web\bin\System.Web.WebPages.xml
+E:\Project\Thu Vien TDMU\Web\Web\bin\System.Web.WebPages.Deployment.xml
+E:\Project\Thu Vien TDMU\Web\Web\bin\System.Web.WebPages.Razor.xml
+E:\Project\Thu Vien TDMU\Web\Web\bin\System.Web.Optimization.xml
+E:\Project\Thu Vien TDMU\Web\Web\bin\Newtonsoft.Json.xml
+E:\Project\Thu Vien TDMU\Web\Web\bin\Antlr3.Runtime.pdb
+E:\Project\Thu Vien TDMU\Web\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Project\Thu Vien TDMU\Web\Web\obj\Debug\Web.csprojAssemblyReference.cache
+E:\Project\Thu Vien TDMU\Web\Web\obj\Debug\Web.csproj.CoreCompileInputs.cache
+E:\Project\Thu Vien TDMU\Web\Web\obj\Debug\Web.csproj.CopyComplete
+E:\Project\Thu Vien TDMU\Web\Web\obj\Debug\Web.dll
+E:\Project\Thu Vien TDMU\Web\Web\obj\Debug\Web.pdb
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\Web.dll.config
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\Web.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\Web.pdb
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\csc.exe
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\csc.exe.config
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\csc.rsp
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\csi.exe
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\csi.exe.config
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\csi.rsp
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.AppContext.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Collections.Immutable.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Console.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.IO.Compression.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.IO.FileSystem.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.IO.Pipes.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Reflection.Metadata.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Security.AccessControl.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Security.Claims.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Security.Principal.Windows.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.ValueTuple.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Xml.XPath.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\vbc.exe
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\vbc.exe.config
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\vbc.rsp
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\VBCSCompiler.exe
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\roslyn\VBCSCompiler.exe.config
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\Antlr3.Runtime.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\CKFinder.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\EntityFramework.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\EntityFramework.SqlServer.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\Microsoft.Web.Infrastructure.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\Model.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\Newtonsoft.Json.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\System.Web.Helpers.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\System.Web.Mvc.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\System.Web.Optimization.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\System.Web.Razor.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\System.Web.WebPages.Deployment.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\System.Web.WebPages.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\System.Web.WebPages.Razor.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\WebGrease.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\Model.pdb
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\Model.dll.config
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\EntityFramework.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\EntityFramework.SqlServer.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\System.Web.Helpers.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\System.Web.Mvc.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\System.Web.Razor.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\System.Web.WebPages.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\System.Web.WebPages.Deployment.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\System.Web.WebPages.Razor.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\System.Web.Optimization.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\Newtonsoft.Json.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\Antlr3.Runtime.pdb
+E:\Google Drive\Project\MVC\TDMULibrary\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Web\obj\Debug\Web.csprojAssemblyReference.cache
+E:\Google Drive\Project\MVC\TDMULibrary\Web\obj\Debug\Web.csproj.CoreCompileInputs.cache
+E:\Google Drive\Project\MVC\TDMULibrary\Web\obj\Debug\Web.csproj.CopyComplete
+E:\Google Drive\Project\MVC\TDMULibrary\Web\obj\Debug\Web.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Web\obj\Debug\Web.pdb
+E:\Elearning\TDMULibrary\Web\bin\Web.dll.config
+E:\Elearning\TDMULibrary\Web\bin\Web.dll
+E:\Elearning\TDMULibrary\Web\bin\Web.pdb
+E:\Elearning\TDMULibrary\Web\bin\roslyn\csc.exe
+E:\Elearning\TDMULibrary\Web\bin\roslyn\csc.exe.config
+E:\Elearning\TDMULibrary\Web\bin\roslyn\csc.rsp
+E:\Elearning\TDMULibrary\Web\bin\roslyn\csi.exe
+E:\Elearning\TDMULibrary\Web\bin\roslyn\csi.exe.config
+E:\Elearning\TDMULibrary\Web\bin\roslyn\csi.rsp
+E:\Elearning\TDMULibrary\Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Elearning\TDMULibrary\Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Elearning\TDMULibrary\Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.AppContext.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Collections.Immutable.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Console.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.IO.Compression.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.IO.FileSystem.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.IO.Pipes.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Reflection.Metadata.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Security.AccessControl.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Security.Claims.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Security.Principal.Windows.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.ValueTuple.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Xml.XPath.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Elearning\TDMULibrary\Web\bin\roslyn\vbc.exe
+E:\Elearning\TDMULibrary\Web\bin\roslyn\vbc.exe.config
+E:\Elearning\TDMULibrary\Web\bin\roslyn\vbc.rsp
+E:\Elearning\TDMULibrary\Web\bin\roslyn\VBCSCompiler.exe
+E:\Elearning\TDMULibrary\Web\bin\roslyn\VBCSCompiler.exe.config
+E:\Elearning\TDMULibrary\Web\bin\Antlr3.Runtime.dll
+E:\Elearning\TDMULibrary\Web\bin\CKFinder.dll
+E:\Elearning\TDMULibrary\Web\bin\EntityFramework.dll
+E:\Elearning\TDMULibrary\Web\bin\EntityFramework.SqlServer.dll
+E:\Elearning\TDMULibrary\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Elearning\TDMULibrary\Web\bin\Microsoft.Web.Infrastructure.dll
+E:\Elearning\TDMULibrary\Web\bin\Model.dll
+E:\Elearning\TDMULibrary\Web\bin\Newtonsoft.Json.dll
+E:\Elearning\TDMULibrary\Web\bin\System.Web.Helpers.dll
+E:\Elearning\TDMULibrary\Web\bin\System.Web.Mvc.dll
+E:\Elearning\TDMULibrary\Web\bin\System.Web.Optimization.dll
+E:\Elearning\TDMULibrary\Web\bin\System.Web.Razor.dll
+E:\Elearning\TDMULibrary\Web\bin\System.Web.WebPages.Deployment.dll
+E:\Elearning\TDMULibrary\Web\bin\System.Web.WebPages.dll
+E:\Elearning\TDMULibrary\Web\bin\System.Web.WebPages.Razor.dll
+E:\Elearning\TDMULibrary\Web\bin\WebGrease.dll
+E:\Elearning\TDMULibrary\Web\bin\Model.pdb
+E:\Elearning\TDMULibrary\Web\bin\Model.dll.config
+E:\Elearning\TDMULibrary\Web\bin\EntityFramework.xml
+E:\Elearning\TDMULibrary\Web\bin\EntityFramework.SqlServer.xml
+E:\Elearning\TDMULibrary\Web\bin\System.Web.Helpers.xml
+E:\Elearning\TDMULibrary\Web\bin\System.Web.Mvc.xml
+E:\Elearning\TDMULibrary\Web\bin\System.Web.Razor.xml
+E:\Elearning\TDMULibrary\Web\bin\System.Web.WebPages.xml
+E:\Elearning\TDMULibrary\Web\bin\System.Web.WebPages.Deployment.xml
+E:\Elearning\TDMULibrary\Web\bin\System.Web.WebPages.Razor.xml
+E:\Elearning\TDMULibrary\Web\bin\System.Web.Optimization.xml
+E:\Elearning\TDMULibrary\Web\bin\Newtonsoft.Json.xml
+E:\Elearning\TDMULibrary\Web\bin\Antlr3.Runtime.pdb
+E:\Elearning\TDMULibrary\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Elearning\TDMULibrary\Web\obj\Debug\Web.csprojAssemblyReference.cache
+E:\Elearning\TDMULibrary\Web\obj\Debug\Web.csproj.CoreCompileInputs.cache
+E:\Elearning\TDMULibrary\Web\obj\Debug\Web.csproj.CopyComplete
+E:\Elearning\TDMULibrary\Web\obj\Debug\Web.dll
+E:\Elearning\TDMULibrary\Web\obj\Debug\Web.pdb
+E:\Elearning\TDMULibrary\Web\bin\System.Net.Http.Formatting.dll
+E:\Elearning\TDMULibrary\Web\bin\System.Web.Http.dll
+E:\Elearning\TDMULibrary\Web\bin\System.Web.Http.WebHost.dll
+E:\Elearning\TDMULibrary\Web\bin\System.Net.Http.Formatting.xml
+E:\Elearning\TDMULibrary\Web\bin\System.Web.Http.xml
+E:\Elearning\TDMULibrary\Web\bin\System.Web.Http.WebHost.xml

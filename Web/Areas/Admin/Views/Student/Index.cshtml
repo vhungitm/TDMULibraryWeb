@@ -1,0 +1,248 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Quản lý sinh viên";
+}
+
+@section Scripts{
+    <script>
+        var config = {
+            key: '@Html.Raw(ViewBag.key)',
+            status: @(ViewBag.status),
+            page: {
+                index: @(ViewBag.page),
+                size: 5,
+                total: 1
+            }
+        }
+    </script>
+    <script src="~/Scripts/Admin/student.js"></script>
+}
+
+<div class="card shadow mb-4">
+
+    <!-- Content header -->
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold">Danh Sách Sinh Viên</h6>
+    </div>
+
+    <!-- Content body -->
+    <div class="card-body">
+        <div class="table-responsive">
+
+            <!-- Tools -->
+            <div class="mb-3">
+
+                <button id="btnAdd" class="btn btn-success btn-icon-split me-1">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-plus"></i>
+                    </span>
+                    <span class="text">Thêm mới</span>
+                </button>
+
+                <button id="btnDelete" style="display: none" class="btn btn-danger btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-trash"></i>
+                    </span>
+                    <span class="text">Xoá</span>
+                </button>
+
+            </div>
+
+            <!-- Filter -->
+            <div class="form-inline mb-3" id="filter"></div>
+
+            <!-- Table -->
+            <table class="table table-bordered" id="dataTable" cellspacing="0"></table>
+
+            <!-- Pagination -->
+            <div>
+                <div id="lblPagination"></div>
+                <div id="pagination" class="pagination justify-content-center"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Filter -->
+<script id="filterContent" type="text/html">
+    <div class="row row-cols-lg-auto g-2 mb-3" width="100%">
+        <div class="col-lg-3">
+            <input id="txtKeySearch" class="form-control" placeholder="Tên / Mã sinh viên" />
+        </div>
+        <div class="col-lg-3">
+            <select id="slStatusSearch" name="slStatusSearch" class="selectpicker">
+                <option value="2">Chọn trạng thái tài khoản</option>
+                <option value="1">Kích hoạt</option>
+                <option value="0">Khoá</option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <button id="btnSearch" class="btn btn-primary btn-icon-split me-1">
+                <span class="icon text-white-50">
+                    <i class="fas fa-search"></i>
+                </span>
+                <span class="text">Tìm kiếm</span>
+            </button>
+            <button id="btnReset" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-sync"></i>
+                </span>
+                <span class="text">Làm mới</span>
+            </button>
+        </div>
+    </div>
+</script>
+
+<!-- Table header -->
+<script id="dataTableHeader" type="x-tmpl-mustache">
+    <thead align="center">
+        <tr align="center">
+            <th width="15">
+                <input id="ckbCheckAll" type="checkbox" class="form-check-input" />
+            </th>
+            <th>Id</th>
+            <th>Tên sinh viên</th>
+            <th>Avatar</th>
+            <th>Thông tin cá nhân</th>
+            <th>Thông tin liên hệ</th>
+            <th>Trạng thái</th>
+            <th>Công cụ</th>
+        </tr>
+    </thead>
+</script>
+
+<!-- Data item -->
+<script id="dataItem" type="x-tmpl-mustache">
+    <tr>
+        <td>
+            <input class="ckbItem form-check-input" type="checkbox" value="{{Id}}">
+        </td>
+        <td align="center" width="160">{{Id}}</td>
+        <td>{{FullName}}</td>
+        <td align="center"><img src="{{Avatar}}" width="50" height="50" class="rounded-circle" /></td>
+        <td>
+            Lớp: {{Class}}<br />
+            Giới tính: {{Gender}}<br />
+            Ngày sinh: {{Birthday}}<br />
+        </td>
+        <td>
+            Địa chỉ: {{Address}}<br />
+            Số điện thoại: {{Phone}}<br />
+            Email: {{Email}}<br />
+        </td>
+        <td>
+            <div class="form-check form-switch">
+                <input class="btnUpdateStatus form-check-input" data-id="{{Id}}" type="checkbox" id="ckbUpdateStatus-{{Id}}" {{Status}}>
+                <label class="form-check-label" for="ckbUpdateStatus-{{Id}}" >{{StatusName}}</label>
+            </div>
+        </td>
+        <td align="center">
+            <button class="btnUpdate btn btn-primary btn-circle btn-sm" title="Cập nhật" data-id="{{Id}}">
+                <i class="fas fa-edit"></i>
+            </button>
+            <button class="btnDelete btn btn-danger btn-circle btn-sm" title="Xóa" data-id="{{Id}}">
+                <i class="fas fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+</script>
+
+<!-- Modal add/update -->
+<div id="modalUpdate" class="modal fade" tabindex="-2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Cập Nhật Thông Tin Sinh Viên</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary btn-icon-split" data-bs-dismiss="modal">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-times"></i>
+                    </span>
+                    <span class="text">Huỷ</span>
+                </button>
+                <button id="btnSave" data-type="0" class="btn btn-primary btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    <span class="text">Hoàn thành</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal add / update content -->
+<script id="modalUpdateBody" type="text/html">
+    
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="mb-3">
+                <center>
+                    <img id="avatar" src="/Images/no-avatar.png" class="rounded-circle" width="200" height="200" />
+                    <div>
+                        <button id="btnSelectAvatar" class="btn my-3 btn-primary btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-image"></i>
+                            </span>
+                            <span class="text">Chọn ảnh</span>
+                        </button>
+                    </div>
+                </center>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <form id="frmUpdate">
+                <div class="mb-3">
+                    <label class="form-label">Mã sinh viên <span class="text-danger">(*)</span></label>
+                    <input id="txtId" name="txtId" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mật khẩu</label>
+                    <input id="txtPassword" name="txtPassword" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Họ tên <span class="text-danger">(*)</span></label>
+                    <input id="txtFullName" name="txtFullName" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Giới tính <span class="text-danger">(*)</span></label>
+                    <select id="slGender" name="slGender" class="selectpicker">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Ngày sinh <span class="text-danger">(*)</span></label>
+                    <input id="dtBirthday" name="dtBirthday" type="date" value="1990-01-01" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Địa chỉ <span class="text-danger">(*)</span></label>
+                    <textarea id="txtAddress" name="txtAddress" class="form-control"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Số điện thoại <span class="text-danger">(*)</span></label>
+                    <input id="txtPhone" name="txtPhone" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email <span class="text-danger">(*)</span></label>
+                    <input id="txtEmail" name="txtEmail" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Lớp <span class="text-danger">(*)</span></label>
+                    <input id="txtClass" name="txtClass" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Trạng thái <span class="text-danger">(*)</span></label>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="ckbStatus" checked>
+                        <label class="form-check-label" for="ckbStatus">Kích hoạt</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</script>

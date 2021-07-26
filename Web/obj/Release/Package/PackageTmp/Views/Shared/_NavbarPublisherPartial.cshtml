@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Model.EF.Publisher>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Nhà xuất bản
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        @foreach (var item in Model)
+        {
+            <li>
+                <a class="dropdown-item" href="/nha-xuat-ban/@item.MetaTitle">@item.Name</a>
+            </li>
+        }
+    </ul>
+</li>

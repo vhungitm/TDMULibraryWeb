@@ -1,0 +1,293 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Quản lý sách";
+}
+
+@section Scripts{
+    <script>
+        var config = {
+            key: '@Html.Raw(ViewBag.key)',
+            category: {
+                id: '@Html.Raw(ViewBag.categoryId)',
+                name: '@Html.Raw(ViewBag.categoryName)'
+            },
+            publisher: {
+                id: '@Html.Raw(ViewBag.publisherId)',
+                name: '@Html.Raw(ViewBag.publisherName)'
+            },
+            publishYear: @Html.Raw(ViewBag.publishYear),
+            status: @Html.Raw(ViewBag.status),
+            page: {
+                index: @(ViewBag.page),
+                size: 5,
+                total: 1
+            }
+        }
+    </script>
+    <script src="~/Scripts/Admin/book.js"></script>
+}
+
+<div class="card shadow mb-4">
+
+    <!-- Content header -->
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold">Danh Sách Sách</h6>
+    </div>
+
+    <!-- Content body -->
+    <div class="card-body">
+        <div class="table-responsive">
+
+            <!-- Tools -->
+            <div class="mb-3">
+                <button id="btnAdd" class="btn btn-success btn-icon-split me-1">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-plus"></i>
+                    </span>
+                    <span class="text">Thêm mới</span>
+                </button>
+
+                <button id="btnDelete" style="display: none" class="btn btn-danger btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-trash"></i>
+                    </span>
+                    <span class="text">Xoá</span>
+                </button>
+            </div>
+
+            <!-- Filter -->
+            <div class="form-inline mb-3" id="filter"></div>
+
+            <!-- Table -->
+            <table class="table table-bordered" id="dataTable" cellspacing="0"></table>
+
+            <!-- Pagination -->
+            <div>
+                <div id="lblPagination"></div>
+                <div id="pagination" class="pagination justify-content-center"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Filter -->
+<script id="filterContent" type="text/html">
+    <div class="row row-cols-lg-auto g-2 mb-3" width="100%">
+        <div class="col-lg-3">
+            <input id="txtKeySearch" class="form-control" placeholder="Từ khoá tìm kiếm" />
+        </div>
+        <div class="col-lg-3">
+            <select id="slCategorySearch" name="slCategorySearch" class="selectpicker" data-search="true" data-search-placeholder="Tên/Mã thể loại">
+                <option value="">Tất cả thể loại sách</option>
+            </select>
+        </div>
+        <div class="col-lg-3">
+            <select id="slPublisherSearch" name="slPublisherSearch" class="selectpicker" data-search="true" data-search-placeholder="Tên/Mã nhà xuất bản">
+                <option value="">Tất cả nhà xuất bản</option>
+            </select>
+        </div>
+        <div class="col-lg-3">
+            <select id="slPublishYearSearch" name="slPublishYearSearch" class="selectpicker" data-search="true" data-search-placeholder="Năm xuất bản">
+                <option value="0">Tất cả năm xuất bản</option>
+                @for (int i = DateTime.Now.Year; i >= 1990; i--)
+                {
+                    <option value="@i">@i</option>
+                }
+            </select>
+        </div>
+        <div class="col-lg-3">
+            <select id="slStatusSearch" name="slStatusSearch" class="selectpicker">
+                <option value="2">Tất cả trạng thái hiển thị</option>
+                <option value="0">Ẩn</option>
+                <option value="1">Hiển thị</option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <button id="btnSearch" class="btn btn-primary btn-icon-split me-1">
+                <span class="icon text-white-50">
+                    <i class="fas fa-search"></i>
+                </span>
+                <span class="text">Tìm kiếm</span>
+            </button>
+        </div>
+        <div class="col-auto">
+            <button id="btnReset" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-sync"></i>
+                </span>
+                <span class="text">Làm mới</span>
+            </button>
+        </div>
+    </div>
+</script>
+
+<!-- Table header -->
+<script id="dataTableHeader" type="x-tmpl-mustache">
+    <thead align="center">
+        <tr align="center">
+            <th width="50">
+                <input id="ckbCheckAll" type="checkbox" class="form-check-input" />
+            </th>
+            <th width="50">Id</th>
+            <th width="200">Tên sách</th>
+            <th width="100">Bìa</th>
+            <th width="160">Tác giả</th>
+            <th width="160">Thể loại</th>
+            <th width="200">Nhà xuất bản</th>
+            <th width="220">Chi tiết</th>
+            <th width="120">Trạng thái</th>
+            <th width="80">Công cụ</th>
+        </tr>
+    </thead>
+</script>
+
+<!-- Data item -->
+<script id="dataItem" type="x-tmpl-mustache">
+    <tr>
+        <td align="center">
+            <input class="ckbItem form-check-input" type="checkbox" value="{{Id}}">
+        </td>
+        <td align="center">{{Id}}</td>
+        <td>{{Title}}</td>
+        <td align="center">
+            <img src="{{Image}}" width="50" height="70" class="border rounded" />
+        </td>
+        <td>{{Authors}}</td>
+        <td>{{CategoryName}}</td>
+        <td>
+            Tên nhà xuất bản: {{PublisherName}}<br/>
+            Năm xuất bản: {{PublishYear}}
+        </td>
+        <td>
+            Số lượng bản sao: {{Quantity}}<br/>
+            Số trang: {{PageNumber}}<br />
+            Kích thước: {{Size}}<br />
+            Trọng lượng: {{Weight}}
+        </td>
+        <td>
+            <div class="form-check form-switch">
+                <input class="btnUpdateStatus form-check-input" data-id="{{Id}}" type="checkbox" id="ckbUpdateStatus-{{Id}}" {{Status}}>
+                <label class="form-check-label" for="ckbUpdateStatus-{{Id}}">{{StatusName}}</label>
+            </div>
+        </td>
+        <td align="center">
+            <button class="btnUpdate btn btn-primary btn-circle btn-sm" title="Cập nhật" data-id="{{Id}}">
+                <i class="fas fa-edit"></i>
+            </button>
+            <button class="btnDelete btn btn-danger btn-circle btn-sm" title="Xóa" data-id="{{Id}}">
+                <i class="fas fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+</script>
+
+<!-- Modal add/update -->
+<div id="modalUpdate" class="modal fade" tabindex="-2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Cập Nhật Thông Tin Sách</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary btn-icon-split" data-bs-dismiss="modal">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-times"></i>
+                    </span>
+                    <span class="text">Huỷ</span>
+                </button>
+                <button id="btnSave" class="btn btn-primary btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    <span class="text">Hoàn thành</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal add/update content -->
+<script id="modalUpdateBody" type="text/html">
+    <form id="frmUpdate">
+        <div class="row">
+            <div class="col-lg-8">
+                <input id="nbrId" value="0" hidden />
+                <div class="mb-3">
+                    <label class="form-label">Tên <span class="text-danger">(*)</span></label>
+                    <input id="txtTitle" name="txtTitle" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Số lượng bản sao <span class="text-danger">(*)</span></label>
+                    <input id="nbrQuantity" name="nbrQuantity" type="number" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Số trang <span class="text-danger">(*)</span></label>
+                    <input id="nbrPageNumber" name="nbrPageNumber" type="number" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Kích thước <span class="text-danger">(*)</span></label>
+                    <input id="txtSize" name="txtSize" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Trọng lượng (gram) <span class="text-danger">(*)</span></label>
+                    <input id="nbrWeight" name="nbrWeight" type="number" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mô tả</label>
+                    <textarea id="txtDescription" name="txtDescription" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="mb-3">
+                    <label class="form-label">Tác giả <span class="text-danger">(*)</span></label>
+                    <input id="txtAuthors" name="txtAuthors" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Thể loại <span class="text-danger">(*)</span></label>
+                    <select id="slCategory" name="slCategory" class="selectpicker" data-search="true" data-search-placeholder="Mã/Tên thể loại sách">
+                        <option value="">Chọn thể loại sách</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Nhà xuất bản <span class="text-danger">(*)</span></label>
+                    <select id="slPublisher" name="slPublisher" class="selectpicker" data-search="true" data-search-placeholder="Mã/Tên nhà xuất bản">
+                        <option value="">Chọn nhà xuất bản</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Năm xuất bản <span class="text-danger">(*)</span></label>
+                    <select id="slPublishYear" name="slPublishYear" class="selectpicker" data-search="true" data-search-placeholder="Năm xuất bản">
+                        <option value="0">Chọn năm xuất bản</option>
+                        @for (int i = DateTime.Now.Year; i >= 1990; i--)
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Trạng thái <span class="text-danger">(*)</span></label>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="ckbStatus" checked>
+                        <label class="form-check-label" for="ckbStatus">Hiển thị</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Hình ảnh <span class="text-danger">(*)</span></label>
+                    <div>
+                        <button id="btnSelectImage" class="btn mb-3 btn-primary btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-image"></i>
+                            </span>
+                            <span class="text">Chọn ảnh</span>
+                        </button>
+                    </div>
+                    <img id="image" src="/Images/no-book-cover.png" class="border rounded" width="200" height="300" />
+                </div>
+
+            </div>
+        </div>
+    </form>
+</script>

@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "Lịch sử mượn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts {
+    <script id="filterContent" type="text/html">
+        <div class="row row-cols-lg-auto g-2 mb-3" width="100%">
+            <div class="col-lg-3">
+                <input id="nbrIdSearch" name="nbrIdSearch" type="number" class="form-control" placeholder="Mã phiếu mượn" />
+            </div>
+            <div class="col-lg-3 dropdown">
+                <select id="slStaffSearch" name="slStaffSearch" class="selectpicker" data-search="true" data-search-placeholder="Mã/Tên nhân viên">
+                    <option value="">Tất cả nhân viên</option>
+                </select>
+            </div>
+            <div class="col-lg-3 dropdown">
+                <select id="slBookSearch" name="slBookSearch" class="selectpicker" data-search="true" data-search-placeholder="Mã/Tên sách">
+                    <option value="">Tất cả sách</option>
+                </select>
+            </div>
+            <div class="col-lg-3">
+                <input id="txtBorrowDate" name="txtBorrowDate" class="form-control" placeholder="Ngày mượn" />
+            </div>
+            <div class="col-lg-3">
+                <input id="txtReturnDate" name="txtReturnDate" class="form-control" placeholder="Ngày trả" />
+            </div>
+            <div class="col-lg-3">
+                <select id="slStatusSearch" name="slStatusSearch" class="selectpicker">
+                    <option value="2">Chọn trạng thái mượn</option>
+                    <option value="1">Đã trả</option>
+                    <option value="0">Chưa Trả</option>
+                    <option value="-1">Đăng ký mượn</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <button id="btnSearch" class="btn btn-primary btn-icon-split me-1">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <span class="text">Tìm kiếm</span>
+                </button>
+                <button id="btnReset" class="btn btn-primary btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-sync"></i>
+                    </span>
+                    <span class="text">Làm mới</span>
+                </button>
+            </div>
+        </div>
+    </script>
+
+    <script id="dataItem" type="text/html">
+        <div class="col-12 col-lg-6 col-xl-6">
+            <div class="card border-0" style="height: 100%">
+                <div class="borrow-card lead" style="height: 100%; font-size: 14px">
+                    <div class="borrow-image">
+                        <img src="{{BookImage}}" class="border rounded" alt="{{BookTitle}}" style="height: 150px; width: 100px">
+                    </div>
+                    <div class="borrow-info">
+                        <div class="card-body p-0">
+                            <h6 class="card-title">
+                                <a href="/{{BookCategoryMetaTitle}}/{{BookMetaTitle}}" title="{{BookTitle}}" class="text-dark">
+                                    {{Id}} - {{BookTitle}}
+                                </a>
+                            </h6>
+                            <div>
+                                {{{Status}}}
+                                {{{BorrowDate}}}
+                                {{{ReturnDeadline}}}
+                                {{{ReturnDate}}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script>
+        var config = {
+            user: { username: '@Html.Raw(ViewBag.username)' },
+
+            id: @Html.Raw(ViewBag.id),
+            staff: {
+                id: '@Html.Raw(ViewBag.staffId)',
+                name: '@Html.Raw(ViewBag.staffName)'
+            },
+            book: {
+                id: '@Html.Raw(ViewBag.bookId)',
+                title: '@Html.Raw(ViewBag.bookTitle)'
+            },
+            borrowDate: '@Html.Raw(ViewBag.borrowDate)',
+            returnDate: '@Html.Raw(ViewBag.returnDate)',
+            status: @Html.Raw(ViewBag.status),
+            page: {
+                index: @Html.Raw(ViewBag.page),
+                size: 6,
+                total: 1
+            }
+        }
+    </script>
+
+    <script src="~/Scripts/Client/borrowHistory.js"></script>
+}
+
+<style>
+    .borrow-card {
+        display: flex
+    }
+
+    .borrow-image {
+        display: flex
+    }
+
+    .borrow-info {
+        margin-left: 10px
+    }
+</style>
+
+<div>
+    <div id="filter"></div>
+    <div id="data" class="row g-5"></div>
+    <div>
+        <div id="lblPagination"></div>
+        <div id="pagination" class="pagination justify-content-center mt-3"></div>
+    </div>
+</div>

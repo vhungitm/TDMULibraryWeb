@@ -1,0 +1,115 @@
+﻿@using Web.Global
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Quản lý sách";
+    var user = (User)Session[Constants.USER];
+}
+
+@section Scripts{
+    <script>
+        var config = {
+            user: {
+                username: '@Html.Raw(user != null ? user.Username : "")'
+            },
+            key: '@Html.Raw(ViewBag.key)',
+            category: {
+                id: '@Html.Raw(ViewBag.categoryId)',
+                name: '@Html.Raw(ViewBag.categoryName)'
+            },
+            publisher: {
+                id: '@Html.Raw(ViewBag.publisherId)',
+                name: '@Html.Raw(ViewBag.publisherName)'
+            },
+            publishYear: @Html.Raw(ViewBag.publishYear),
+            page: {
+                index: @(ViewBag.page),
+                size: 8,
+                total: 1
+            }
+        }
+    </script>
+    <script src="~/Scripts/Client/search.js"></script>
+}
+
+<div>
+    <!-- Filter -->
+    <div class="form-inline mb-3" id="filter"></div>
+
+    <div id="books" class="row g-3 text-center mb-3"></div>
+
+    <!-- Pagination -->
+    <div>
+        <div id="lblPagination"></div>
+        <div id="pagination" class="pagination justify-content-center"></div>
+    </div>
+</div>
+
+<!-- Filter -->
+<script id="filterContent" type="text/html">
+    <div class="row row-cols-lg-auto g-2 mb-3" width="100%">
+        <div class="col-lg-3">
+            <input id="txtKeySearch" class="form-control" placeholder="Từ khoá tìm kiếm" />
+        </div>
+        <div class="col-lg-3">
+            <select id="slCategorySearch" name="slCategorySearch" class="selectpicker" data-search="true" data-search-placeholder="Tên/Mã thể loại">
+                <option value="">Tất cả thể loại sách</option>
+            </select>
+        </div>
+        <div class="col-lg-3">
+            <select id="slPublisherSearch" name="slPublisherSearch" class="selectpicker" data-search="true" data-search-placeholder="Tên/Mã nhà xuất bản">
+                <option value="">Tất cả nhà xuất bản</option>
+            </select>
+        </div>
+        <div class="col-lg-3">
+            <select id="slPublishYearSearch" name="slPublishYearSearch" class="selectpicker" data-search="true" data-search-placeholder="Năm xuất bản">
+                <option value="0">Tất cả năm xuất bản</option>
+                @for (int i = DateTime.Now.Year; i >= 1990; i--)
+                {
+                    <option value="@i">@i</option>
+                }
+            </select>
+        </div>
+        <div class="col-auto">
+            <button id="btnSearch" class="btn btn-primary btn-icon-split me-1">
+                <span class="icon text-white-50">
+                    <i class="fas fa-search"></i>
+                </span>
+                <span class="text">Tìm kiếm</span>
+            </button>
+        </div>
+        <div class="col-auto">
+            <button id="btnReset" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-sync"></i>
+                </span>
+                <span class="text">Làm mới</span>
+            </button>
+        </div>
+    </div>
+</script>
+
+<!-- Data item -->
+<script id="bookItem" type="text/html">
+    <div class="col-6 col-xl-3">
+        <div class="card border-0" style="height: 100%">
+            <div>
+                <img src="{{Image}}" class="rounded border-bottom border" alt="{{Title}}" style="height: 180px; width: 120px; max-width: 100%">
+            </div>
+            <div class="card-body pb-2">
+                <h6 class="card-title">
+                    <a href="/{{CategoryMetaTitle}}/{{MetaTitle}}" title="{{Title}}" class="text-dark">
+                        {{Title}}
+                    </a>
+                </h6>
+            </div>
+            <div class="pb-3">
+                <button data-id="{{Id}}" class="btnRegisBorrow btn btn-primary btn-sm btn-icon-split mt-auto">
+                    <span class="icon">
+                        <i class="fas fa-edit"></i>
+                    </span>
+                    <span class="text">Đăng ký mượn</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,42 @@
+﻿<nav class="navbar navbar-expand-lg navbar-light bg-white shadow fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+            <span>TDMU</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="@Url.Action("Index", "Home")">
+                        <i class="fas fa-home"></i>
+                        <span> Trang Chủ</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Introduce", "Home")">Giới Thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Contact", "Home")">Liên Hệ</a>
+                </li>
+                @Html.Action("_NavbarCategoryPartial", "Home")
+                @Html.Action("_NavbarPublisherPartial", "Home")
+            </ul>
+            <form action="/tim-kiem" class="d-fle">
+                <div class="input-group">
+                    <input class="form-control" type="search" name="key" placeholder="Từ khoá" aria-label="Search">
+                    <button class="btn btn-primary btn-icon-split" type="submit">
+                        <span class="icon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <span class="text">Tìm</span>
+                    </button>
+                </div>
+            </form>
+            <ul class="navbar-nav ms-2 mb-2 mb-lg-0">
+                @Html.Partial("_NavbarUserPartial")
+            </ul>
+        </div>
+    </div>
+</nav>

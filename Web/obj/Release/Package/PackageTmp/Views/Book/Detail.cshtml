@@ -1,0 +1,150 @@
+﻿@using Model.EF
+@using Web.Global
+
+@model Book
+@{
+    ViewBag.Title = "TDMU - " + Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var user = (User)Session[Constants.USER];
+    var relatedBook = (IEnumerable<Book>)ViewBag.RelatedBook;
+}
+
+@section Scripts {
+    <script>
+        var config = {
+            book: { id: @Html.Raw(Model.Id) },
+            user: { username: '@Html.Raw(user != null ? user.Username : "")' }
+        }
+    </script>
+    <script src="~/Scripts/Client/bookDetail.js"></script>
+}
+
+<style>
+    .book-cart {
+        display: flex;
+    }
+
+    .book-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .book-info {
+        margin-left: 1.25rem
+    }
+</style>
+
+<div>
+    <div class="card p-4 mb-2">
+        <div class="row g-2">
+            <div class="col-12 col-md-4 col-lg-3 col-xl-3">
+                <div class="text-center text-md-center">
+                    <img src="@Model.Image" style="width: 200px; height: 280px" class="border rounded"/>
+                </div>
+            </div>
+            <div class="card-body col-12 col-md-8 col-lg-9 col-xl-9">
+                <h5 class="fw-bold">@Model.Title</h5>
+                <div class="py-2">
+                    <div class="mb-2">
+                        <span class="text">Thể loại: </span>
+                        <span class="fw-bold">@Model.CategoryName</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text">Nhà xuất bản: </span>
+                        <span class="fw-bold">@Model.PublisherName</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text">Tác giả: </span>
+                        <span class="fw-bold">@Model.Authors</span><br />
+                    </div>
+                    <div>
+                        <span class="text">Số lượng trong kho: </span>
+                        <span class="fw-bold">@Model.Quantity</span>
+                    </div>
+                </div>
+                <div>
+                    <button data-id="@Model.Id" class="btnRegisBorrow btn btn-primary btn-sm btn-icon-split mt-2">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-edit"></i>
+                        </span>
+                        <span class="text">Đăng ký mượn</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail" type="button" role="tab" aria-controls="nav-detail" aria-selected="true">Chi tiết</button>
+            </div>
+        </nav>
+        <div class="tab-content border border-top-0 rounded-bottom p-3" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab">
+                <div class="border-bottom pb-4">
+                    <div class="row mb-1 g-2">
+                        <div class="col-6 text-end">Mã sách</div>
+                        <div class="col-6 fw-bold">@Model.Id</div>
+                        <div class="col-6 text-end">Nhà xuất bản</div>
+                        <div class="col-6 fw-bold">@Model.PublisherName</div>
+                        <div class="col-6 text-end">Năm xuất bản</div>
+                        <div class="col-6 fw-bold">@Model.PublishYear</div>
+                        <div class="col-6 text-end">Số trang</div>
+                        <div class="col-6 fw-bold">@Model.PageNumber</div>
+                        <div class="col-6 text-end">Kích thước</div>
+                        <div class="col-6 fw-bold">@Model.Size cm</div>
+                        <div class="col-6 text-end">Trọng lượng</div>
+                        <div class="col-6 fw-bold">@Model.Weight gram</div>
+                    </div>
+                </div>
+                <div class="pt-3">
+                    @Html.Raw(Model.Description)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (relatedBook.Count() > 0)
+{
+    <div class="mt-5 text-center">
+        <h5 class="fw-bold mb-4">CÙNG THỂ LOẠI</h5>
+        <div class="row g-3 mb-4">
+            @foreach (var item in relatedBook)
+            {
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card border-0" style="height: 100%">
+                        <div>
+                            <img src="@item.Image" class="border rounded" alt="@item.Title" style="height: 180px; width: 120px; max-width: 100%">
+                        </div>
+                        <div class="card-body pb-2">
+                            <h6 class="card-title">
+                                <a href="/@item.CategoryMetaTitle/@item.MetaTitle" title="@item.Title" class="text-dark">
+                                    @item.Title
+                                </a>
+                            </h6>
+                        </div>
+                        <div class="pb-3">
+                            <button data-id="@item.Id" class="btnRegisBorrow btn btn-primary btn-sm btn-icon-split mt-auto">
+                                <span class="icon">
+                                    <i class="fas fa-edit"></i>
+                                </span>
+                                <span class="text">Đăng ký mượn</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div>
+            <a href="/@Model.CategoryMetaTitle" class="btn btn-primary btn-sm btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-eye"></i>
+                </span>
+                <span class="text">Xem thêm</span>
+            </a>
+        </div>
+    </div>
+}

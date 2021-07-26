@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Thư viện TDMU">
+    <meta name="author" content="Hùng ITM">
+
+    <link rel="icon" href="/Images/tdmu-logo.png" type="image/x-icon">
+    <title>@ViewBag.Title</title>
+
+    <!-- Css -->
+    <link href="~/Css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Css/style.css" rel="stylesheet" />
+    <link href="~/Fontawesome/css/all.min.css" rel="stylesheet" />
+
+    <!-- Jquery -->
+    <script src="~/Scripts/jquery.min.js"></script>
+</head>
+<body>
+    @Html.Partial("_NavbarPartial")
+
+    <div class="container" style="padding-top: 100px">
+        @RenderBody()
+    </div>
+    @Html.Partial("_FooterPartial")
+
+    <!-- Scripts -->
+    <script src="~/Scripts/bootbox.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/mustache.min.js"></script>
+    <script src="~/Scripts/pagination.min.js"></script>
+    <script src="~/Scripts/selectpicker.js"></script>
+    @RenderSection("Scripts", false)
+    <script src="~/Scripts/Client/user.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\Model.dll.config
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\Model.dll
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\Model.pdb
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\EntityFramework.dll
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\System.Web.Helpers.dll
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\System.Web.Mvc.dll
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\System.Web.Razor.dll
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\System.Web.WebPages.dll
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\EntityFramework.xml
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\System.Web.Helpers.xml
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\System.Web.Mvc.xml
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\System.Web.Razor.xml
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\System.Web.WebPages.xml
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Hung\source\repos\Web\Model\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Hung\source\repos\Web\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Hung\source\repos\Web\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Hung\source\repos\Web\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\Hung\source\repos\Web\Model\obj\Debug\Model.dll
+C:\Users\Hung\source\repos\Web\Model\obj\Debug\Model.pdb
+E:\Project\Thu Vien TDMU\Web\Model\obj\Debug\Model.csprojAssemblyReference.cache
+E:\Project\Thu Vien TDMU\Web\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+E:\Project\Thu Vien TDMU\Web\Model\obj\Debug\Model.dll
+E:\Project\Thu Vien TDMU\Web\Model\obj\Debug\Model.pdb
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\Model.dll.config
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\Model.dll
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\Model.pdb
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\EntityFramework.dll
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\System.Web.Helpers.dll
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\System.Web.Mvc.dll
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\System.Web.Razor.dll
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\System.Web.WebPages.dll
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\System.Web.WebPages.Razor.dll
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\EntityFramework.xml
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\System.Web.Helpers.xml
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\System.Web.Mvc.xml
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\System.Web.Razor.xml
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\System.Web.WebPages.xml
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\Project\Thu Vien TDMU\Web\Model\bin\Debug\System.Web.WebPages.Razor.xml
+E:\Project\Thu Vien TDMU\Web\Model\obj\Debug\Model.csproj.CopyComplete
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\Model.dll.config
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\Model.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\Model.pdb
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\EntityFramework.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\System.Web.Helpers.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\System.Web.Mvc.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\System.Web.Razor.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\System.Web.WebPages.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\System.Web.WebPages.Razor.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\EntityFramework.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\System.Web.Helpers.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\System.Web.Mvc.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\System.Web.Razor.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\System.Web.WebPages.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Model\bin\Debug\System.Web.WebPages.Razor.xml
+E:\Google Drive\Project\MVC\TDMULibrary\Model\obj\Debug\Model.csprojAssemblyReference.cache
+E:\Google Drive\Project\MVC\TDMULibrary\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+E:\Google Drive\Project\MVC\TDMULibrary\Model\obj\Debug\Model.csproj.CopyComplete
+E:\Google Drive\Project\MVC\TDMULibrary\Model\obj\Debug\Model.dll
+E:\Google Drive\Project\MVC\TDMULibrary\Model\obj\Debug\Model.pdb
+E:\Elearning\TDMULibrary\Model\bin\Debug\Model.dll.config
+E:\Elearning\TDMULibrary\Model\bin\Debug\Model.dll
+E:\Elearning\TDMULibrary\Model\bin\Debug\Model.pdb
+E:\Elearning\TDMULibrary\Model\bin\Debug\EntityFramework.dll
+E:\Elearning\TDMULibrary\Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Elearning\TDMULibrary\Model\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\Elearning\TDMULibrary\Model\bin\Debug\System.Web.Helpers.dll
+E:\Elearning\TDMULibrary\Model\bin\Debug\System.Web.Mvc.dll
+E:\Elearning\TDMULibrary\Model\bin\Debug\System.Web.Razor.dll
+E:\Elearning\TDMULibrary\Model\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\Elearning\TDMULibrary\Model\bin\Debug\System.Web.WebPages.dll
+E:\Elearning\TDMULibrary\Model\bin\Debug\System.Web.WebPages.Razor.dll
+E:\Elearning\TDMULibrary\Model\bin\Debug\EntityFramework.xml
+E:\Elearning\TDMULibrary\Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Elearning\TDMULibrary\Model\bin\Debug\System.Web.Helpers.xml
+E:\Elearning\TDMULibrary\Model\bin\Debug\System.Web.Mvc.xml
+E:\Elearning\TDMULibrary\Model\bin\Debug\System.Web.Razor.xml
+E:\Elearning\TDMULibrary\Model\bin\Debug\System.Web.WebPages.xml
+E:\Elearning\TDMULibrary\Model\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\Elearning\TDMULibrary\Model\bin\Debug\System.Web.WebPages.Razor.xml
+E:\Elearning\TDMULibrary\Model\obj\Debug\Model.csprojAssemblyReference.cache
+E:\Elearning\TDMULibrary\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+E:\Elearning\TDMULibrary\Model\obj\Debug\Model.csproj.CopyComplete
+E:\Elearning\TDMULibrary\Model\obj\Debug\Model.dll
+E:\Elearning\TDMULibrary\Model\obj\Debug\Model.pdb
