@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Model.EF.Publisher>
+
+<div class="list-group mb-3">
+    <div class="list-group-item active fw-bold" aria-current="true">Nhà Xuất Bản</div>
+    @foreach (var item in Model)
+    {
+        <a href="/nha-xuat-ban/@item.MetaTitle" class="list-group-item">@item.Name</a>
+    }
+</div>

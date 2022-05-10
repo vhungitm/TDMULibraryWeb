@@ -1,0 +1,43 @@
+﻿@using Web.Global
+@{
+    var user = (User)Session[Constants.USER];
+}
+
+@if (user == null)
+{
+    <li class="nav-item">
+        <a href="@Url.Action("Login", "Home")" class="nav-link">
+            <i class="fas fa-sign-in-alt"></i>
+            <span> Đăng Nhập</span>
+        </a>
+    </li>
+}
+else
+{
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+            <span> Xin chào @user.FullName</span>
+            <span>
+                <img src="@user.Avatar" width="30" height="30" class="rounded-circle" />
+            </span>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="@Url.Action("BorrowHistory", "Book", new { id = 0 })" class="dropdown-item">
+                    <span class="icon">
+                        <i class="fas fa-book text-black-50"></i>
+                    </span>
+                    <span class="text">Lịch sử mượn</span>
+                </a>
+            </li>
+            <li>
+                <a id="btnLogout" href="#" class="dropdown-item">
+                    <span class="icon">
+                        <i class="fas fa-sign-out-alt text-black-50 fa-bold"></i>
+                    </span>
+                    <span class="text">Đăng xuất</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+}

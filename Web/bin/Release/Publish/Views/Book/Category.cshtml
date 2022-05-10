@@ -1,0 +1,70 @@
+﻿@using Web.Global
+@using Model.EF
+
+@model Category
+
+@{
+    ViewBag.Title = "TDMU - Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var user = (User)Session[Constants.USER];
+}
+
+@section Scripts {
+    <script id="bookItem" type="text/html">
+        <div class="col-6 col-xl-4">
+            <div class="card border-0" style="height: 100%">
+                <div>
+                    <img src="{{Image}}" class="rounded border-bottom border" alt="{{Title}}" style="height: 180px; width: 120px; max-width: 100%">
+                </div>
+                <div class="card-body pb-2">
+                    <h6 class="card-title">
+                        <a href="/@Model.MetaTitle/{{MetaTitle}}" title="{{Title}}" class="text-dark">
+                            {{Title}}
+                        </a>
+                    </h6>
+                </div>
+                <div class="pb-3">
+                    <button data-id="{{Id}}" class="btnRegisBorrow btn btn-primary btn-sm btn-icon-split mt-auto">
+                        <span class="icon">
+                            <i class="fas fa-edit"></i>
+                        </span>
+                        <span class="text">Đăng ký mượn</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script>
+        var config = {
+            user: {
+                username: '@Html.Raw(user != null ? user.Username : "")'
+            },
+            category: {
+                id: '@Html.Raw(Model.MetaTitle)'
+            },
+            page: {
+                index: @Html.Raw(ViewBag.page),
+                size: 6,
+                total: 1
+            }
+        }
+    </script>
+    <script src="~/Scripts/Client/category.js"></script>
+}
+
+@Html.Action("SlidePartial", "Home")
+<div class="row pt-5">
+    <div class="col-sm-12 col-md-4 col-xl-3">
+        @Html.Action("CategoryPartial", "Home")
+    </div>
+
+    <div class="col-sm-12 col-md-8 col-xl-9">
+        <h5 class="text-center fw-bold mb-3">@Model.Name</h5>
+        <div id="books" class="row g-3 text-center mb-3"></div>
+        <div>
+            <div id="lblPagination" class="mb-3"></div>
+            <div id="pagination" class="pagination justify-content-center"></div>
+        </div>
+    </div>
+</div>

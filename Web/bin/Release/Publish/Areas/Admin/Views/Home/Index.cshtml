@@ -1,0 +1,162 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Thống kê";
+}
+
+@section Scripts{
+    <script>
+        let now = new Date();
+        let strNow = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate();
+
+        var config = {
+            startDate: strNow,
+            endDate: strNow,
+            type: 2
+        }
+    </script>
+    <script src="~/Scripts/Chart.bundle.min.js"></script>
+    <script src="~/Scripts/Admin/statistic.js"></script>
+}
+
+<div class="card shadow mb-4">
+
+    <!-- Content header -->
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold">Thống kê</h6>
+    </div>
+
+    <!-- Content body -->
+    <div class="card-body p-5">
+        <div class="form-inline mb-3" id="filter"></div>
+        <div id="statistic"></div>
+    </div>
+</div>
+
+<script id="statisticContent" type="text/html">
+    <div id="chart"></div>
+    <table class="table table-bordered mt-5" cellspacing="0">
+        <thead>
+            <tr align="center">
+                <td colspan="4">
+                    <b>TOP SÁCH ĐƯỢC MƯỢN NHIỀU NHẤT</b>
+                </td>
+            </tr>
+            <tr align="center">
+                <th>Top</th>
+                <th colspan="2">Sách</th>
+                <th>Số lượng</th>
+            </tr>
+        </thead>
+        <tbody id="topBookTable"></tbody>
+    </table>
+    <table class="table table-bordered mt-5" cellspacing="0">
+        <thead>
+            <tr align="center">
+                <td colspan="4">
+                    <b>TOP SINH VIÊN MƯỢN SÁCH NHIỀU NHẤT</b>
+                </td>
+            </tr>
+            <tr align="center">
+                <th>Top</th>
+                <th colspan="2">Sinh viên</th>
+                <th>Số lượng</th>
+            </tr>
+        </thead>
+        <tbody id="topStudentTable"></tbody>
+    </table>
+</script>
+
+<script id="chartContent" type="text/html">
+    <div>
+        <div class="mb-3 border rounded p-5 pb-3">
+            <div class="chart-area">
+                <canvas id="dataChart"></canvas>
+            </div>
+        </div>
+        <div id="chartName" class="text-center pt-3">
+            <b>BIỂU ĐỒ THỐNG KÊ SỐ LƯỢNG MƯỢN SÁCH</b>
+        </div>
+
+    </div>
+</script>
+
+<!-- Filter -->
+<script id="filterContent" type="text/html">
+    <div class="row row-cols-lg-auto g-2 me-0" width="100%">
+        <div class="col-lg-3">
+            <select id="slType" class="selectpicker">
+                <option value="2">Thống kê theo năm</option>
+                <option value="1">Thống kê theo tháng</option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <select id="slMonth" class="selectpicker">
+                @for (int i = 1; i <= 12; i++)
+                {
+                    <option value="@i">Tháng @i</option>
+                }
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <select id="slYear" class="selectpicker" data-search="true" data-search-placeholder="Năm">
+                @for (int i = DateTime.Now.Year; i >= 2000; i--)
+                {
+                    <option value="@i">Năm @i</option>
+                }
+            </select>
+        </div>
+        <div class="col-auto">
+            <button id="btnStatistic" class="btn btn-primary btn-icon-split me-1">
+                <span class="icon text-white-50">
+                    <i class="fas fa-chart-area"></i>
+                </span>
+                <span class="text">Thống kê</span>
+            </button>
+            <button id="btnReset" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-sync"></i>
+                </span>
+                <span class="text">Làm mới</span>
+            </button>
+        </div>
+    </div>
+</script>
+
+<!-- Top book item -->
+<script id="topBookItem" type="x-tmpl-mustache">
+    <tr>
+        <td align="center" width="120">
+            {{Top}}
+        </td>
+        <td align="center" width="120">
+            <img src="{{Image}}" width="50" height="70" class="border rounded" />
+        </td>
+        <td>
+            Mã sách: {{Id}}<br />
+            Tên sách: {{Title}}
+        </td>
+        <td align="center" width="120">
+            {{Quantity}}
+        </td>
+    </tr>
+</script>
+
+<!-- Top student item -->
+<script id="topStudentItem" type="x-tmpl-mustache">
+    <tr>
+        <td align="center" width="120">
+            {{Top}}
+        </td>
+        <td align="center" width="120">
+            <img src="{{Avatar}}" width="50" height="50" class="rounded-circle" />
+        </td>
+        <td>
+            MSSV: {{Id}}<br />
+            Họ tên: {{FullName}}<br />
+            Lớp: {{ClassName}}
+        </td>
+        <td align="center" width="120">
+            {{Quantity}}
+        </td>
+    </tr>
+</script>

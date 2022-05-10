@@ -2,6 +2,7 @@
     init: function () {
         statistic.loadFilter();
         statistic.loadData();
+        statistic.registerEvent();
     },
     registerEvent: function () {
         // Filter

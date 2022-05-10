@@ -1,0 +1,74 @@
+﻿<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar - Brand -->
+    <li class="sidebar-brand d-flex align-items-center justify-content-center">
+        <a href="@Url.Action("Index", "Home")" class="text-white">
+            <img src="~/Images/tdmu-logo.png" width="50" height="50" />
+            <i class="sidebar-brand-text mx-3">TDMU</i>
+        </a>
+    </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Index", "Home")">
+            <i class="fas fa-home"></i>
+            <span>Trang chủ</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Index", "Publisher")">
+            <i class="fas fa-book-reader"></i>
+            <span>Nhà xuất bản</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#btnBookTab">
+            <i class="fas fa-book-open"></i>
+            <span>Sách</span>
+        </a>
+        <div id="btnBookTab" class="collapse">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="@Url.Action("Index", "Category")">Thể loại sách</a>
+                <a class="collapse-item" href="@Url.Action("Index", "Book")">Sách</a>
+                <a class="collapse-item" href="@Url.Action("Index", "Import")">Phiếu nhập</a>
+                <a class="collapse-item" href="@Url.Action("Index", "Borrow")">Phiếu mượn</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#btnUserTab">
+            <i class="fas fa-user"></i>
+            <span>Người dùng</span>
+        </a>
+        <div id="btnUserTab" class="collapse">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="@Url.Action("Index", "Staff")">Nhân viên</a>
+                <a class="collapse-item" href="@Url.Action("Index", "Student")">Sinh viên</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Index", "Feedback")">
+            <i class="fas fa-file-alt"></i>
+            <span>Phản hồi</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#btnSettingTab">
+            <i class="fas fa-cog"></i>
+            <span>Thiết lập</span>
+        </a>
+        <div id="btnSettingTab" class="collapse">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="@Url.Action("Index", "Banner")">Bìa quảng cáo</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+</ul>

@@ -1,0 +1,149 @@
+﻿
+@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Quản lý phản hồi";
+}
+
+@section Scripts{
+    <script>
+        var config = {
+            status: @(ViewBag.status),
+            page: {
+                index: @(ViewBag.page),
+                size: 5,
+                total: 1
+            }
+        }
+    </script>
+    <script src="~/Scripts/Admin/feedback.js"></script>
+}
+<div class="card shadow mb-4">
+    <!-- Content header -->
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold">Danh Sách Phản Hồi</h6>
+    </div>
+
+    <!-- Content body -->
+    <div class="card-body">
+        <div class="table-responsive">
+
+            <!-- Tools -->
+            <div class="mb-3">
+
+                <button id="btnDelete" style="display:none" class="btn btn-danger btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-trash"></i>
+                    </span>
+                    <span class="text">Xoá</span>
+                </button>
+            </div>
+
+            <!-- Filter -->
+            <div class="form-inline" id="filter"></div>
+
+            <!-- Table -->
+            <table class="table table-bordered" id="dataTable" cellspacing="0"></table>
+
+            <!-- Pagination -->
+            <div>
+                <div id="lblPagination"></div>
+                <div id="pagination" class="pagination justify-content-center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Filter -->
+<script id="filterContent" type="text/html">
+    <div class="row row-cols-lg-auto g-2 mb-3" width="100%">
+        <div class="col-lg-3">
+            <select id="slStatusSearch" name="slStatusSearch" class="selectpicker">
+                <option value="2">Tất cả trạng thái</option>
+                <option value="0">Chưa xem</option>
+                <option value="1">Đã xem</option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <button id="btnSearch" class="btn btn-primary btn-icon-split me-1">
+                <span class="icon text-white-50">
+                    <i class="fas fa-search"></i>
+                </span>
+                <span class="text">Tìm kiếm</span>
+            </button>
+            <button id="btnReset" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-sync"></i>
+                </span>
+                <span class="text">Làm mới</span>
+            </button>
+        </div>
+    </div>
+</script>
+
+<!-- Table header -->
+<script id="dataTableHeader" type="x-tmpl-mustache">
+    <thead align="center">
+        <tr>
+            <th width="15">
+                <input id="ckbCheckAll" type="checkbox" class="form-check-input" />
+            </th>
+            <th align="center">Id</th>
+            <th>Họ tên</th>
+            <th>Số điện thoại</th>
+            <th width="150">Email</th>
+            <th width="150">Nội dung</th>
+            <th width="150">Trạng thái</th>
+            <th align="center">Công cụ</th>
+        </tr>
+    </thead>
+</script>
+
+<!-- Data item -->
+<script id="dataItem" type="x-tmpl-mustache">
+    <tr>
+        <td width="50" align="center">
+            <input class="ckbItem form-check-input" type="checkbox" value="{{Id}}">
+        </td>
+        <td align="center">{{Id}}</td>
+        <td align="center">{{Name}}</td>
+        <td align="center">{{Phone}}</td>
+        <td align="center">{{Email}}</td>
+        <td align="center">
+            <button type="button" data-id="{{Id}}" class="btnViewContent btn btn-sm btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-eye"></i>
+                </span>
+                <span class="text">Xem</span>
+            </button>
+        </td>
+        <td>
+            <div class="form-check form-switch">
+                <input class="btnUpdateStatus form-check-input" data-id="{{Id}}" type="checkbox" id="ckbUpdateStatus-{{Id}}" {{Status}}>
+                <label class="form-check-label" for="ckbUpdateStatus-{{Id}}">{{StatusName}}</label>
+            </div>
+        </td>
+        <td align="center">
+            <button class="btnDelete btn btn-danger btn-circle btn-sm" title="Xóa" data-id="{{Id}}">
+                <i class="fas fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+</script>
+
+<!-- Modal view feedback content -->
+<div id="modalViewContent" class="modal fade" tabindex="-2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nội Dung Phản Hồi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</div>
+<script id="modalViewContentBody" type="text/html">
+    <div id="feedbackContent">
+    
+    </div>
+</script>
